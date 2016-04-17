@@ -48,13 +48,13 @@ for i=2:nFrames
         end
         
         % sth to do when abandoned object found
-        for l=1:numel(deleteFigures)
-            fig = deleteFigures(l);
-            vEdge = [fig.top:fig.top+size(fig.fig,1)-1];
-            hEdge = [fig.left:fig.left+size(fig.fig,2)-1];
-            orgFig = ddiffFrame(vEdge,hEdge);
-            ddiffFrame(vEdge,hEdge) = orgFig&~fig.fig;
-        end
+%         for l=1:numel(deleteFigures)
+%             fig = deleteFigures(l);
+%             vEdge = [fig.top:fig.top+size(fig.fig,1)-1];
+%             hEdge = [fig.left:fig.left+size(fig.fig,2)-1];
+%             orgFig = ddiffFrame(vEdge,hEdge);
+%             ddiffFrame(vEdge,hEdge) = orgFig&~fig.fig;
+%         end
         [cnt,L] = ccAnalysis(ddiffFrame);
         bounds = detectBoundsByCC(cnt,L);
         newBounds = [];
